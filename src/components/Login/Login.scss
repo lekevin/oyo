@@ -1,0 +1,99 @@
+@import './src/styles/variables.scss';
+@import './src/styles/global.scss';
+@import './src/styles/mixins.scss';
+@import './src/styles/font.scss';
+
+.hero {
+    display: flex;
+    height: 100vh;
+}
+
+// *****left side content*****
+
+.hero-left {
+    @include flex-between;
+    width: 60%;
+    background-color: black;
+    color: white;
+}
+
+.hero-left-content {
+    margin: auto;
+}
+
+.hero-left-text {
+    font-weight: 100;
+    font-size: 28px;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    margin: 0;
+    padding: 1rem;
+    width: 30%;
+}
+
+.balls {
+    width: 80%;
+    margin: auto;
+}
+
+// *****right side content*****
+
+.hero-right {
+    @include flex-center;
+    width: 40%;
+    background-color: $white;
+}
+
+.logo-wrapper span {
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.logo-wrapper {
+    margin-bottom: 1rem;
+}
+
+.signup-text {
+    font-size: 20px;
+}
+
+.name {
+    margin-top: 1.5rem;
+}
+
+.input {
+    margin-bottom: 1.5rem;
+    border: none;
+    background-color: $white;
+    border-bottom: 2px solid $lightgray;
+    width: 100%;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.button {
+    @include flex-center;
+    height: 2.5em;
+    width: 100px;
+    border-radius: $radius;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: white;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    box-shadow: 5px 5px 20px $lightgray, -5px -5px 20px $white;
+    transform: translateY(-2px);
+}
+
+.buttons {
+    @include flex-between;
+}
