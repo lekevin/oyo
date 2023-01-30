@@ -1,0 +1,52 @@
+@import './src/styles/variables.scss';
+@import './src/styles/global.scss';
+@import './src/styles/mixins.scss';
+@import './src/styles/font.scss';
+
+header {
+    @include flex-between;
+    background-color: transparent;
+    align-items: center;
+}
+
+li,
+ul,
+a {
+    @include flex-center;
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 30px;
+}
+
+.flyout {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.flyout .bar,
+.flyout:after,
+.flyout:before {
+    content: '';
+    display: flex;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0px;
+    transition: 0.5s;
+}
+
+.flyout.active:before {
+    transform: rotate(-45deg) translate(-8px, 4px);
+}
+
+.flyout.active:after {
+    transform: rotate(45deg) translate(-8px, -4px);
+}
+
+.flyout.active .bar {
+    opacity: 0;
+}

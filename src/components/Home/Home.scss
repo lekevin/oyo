@@ -1,0 +1,13 @@
+@import './src/styles/variables.scss';
+@import './src/styles/global.scss';
+@import './src/styles/mixins.scss';
+@import './src/styles/font.scss';
+
+body {
+    background-color: $white;
+}
+
+.oyo-header {
+    font-size: 56px;
+    color: $blue;
+}

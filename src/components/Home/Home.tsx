@@ -1,9 +1,15 @@
-import React from 'react';
+import Header from '../Header/Header';
+import './Home.scss';
 
 type Props = {};
 
-function HomeView({}: Props) {
-    return <div>HomeView</div>;
+function Home({}: Props) {
+    return (
+        <>
+            <Header />
+            <div className="oyo-header">asdasd</div>
+        </>
+    );
 }
 
-export default HomeView;
+export default Home;

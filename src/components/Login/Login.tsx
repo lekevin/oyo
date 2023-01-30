@@ -6,7 +6,12 @@ export default function Login() {
             <div className="hero">
                 <div className="hero-left">
                     <img src="website.gif" alt="balls" className="balls" />
-                    <h3 className="hero-left-text">Integrate into the greater systems within you.</h3>
+                    <h3 className="hero-left-text">
+                        <span className="oyo">oyo</span>
+                        <div className="left-text">
+                            <span className="integrate">Integrate</span> into the greater systems within you.
+                        </div>
+                    </h3>
                 </div>
                 <div className="hero-right">
                     <form className="login-content">
