@@ -1,5 +1,46 @@
 import './Login.scss';
+import React, { useState } from 'react';
+import { Amplify, Auth } from 'aws-amplify';
+import awsExports from '../../aws-exports';
+Amplify.configure(awsExports);
+/* Create the form state and form input state */
+let formState = 'signUp';
+let formInputState = { username: '', password: '', email: '' };
+function onChange(e: any) {
+    formInputState = { ...formInputState, [e.target.name]: e.target.value };
+}
+/* Sign up function */
+async function signUp(e: any) {
+    try {
+        e.preventDefault();
+        console.log('working');
+        await Auth.signUp({
+            username: formInputState.username,
+            password: formInputState.password,
+            attributes: {
+                email: formInputState.email
+            }
+        });
+        console.log(formInputState.username);
+        /* Once the user successfully signs up, update form state to show the confirm sign up form for MFA */
+        formState = 'confirmSignUp';
+        console.log('hello');
+    } catch (err) {
+        e.preventDefault();
+        console.log({ err });
+    }
+}
 
+/* Sign in function */
+async function signIn() {
+    try {
+        await Auth.signIn(formInputState.username, formInputState.password);
+        /* Once the user successfully signs in, update the form state to show the signed in state */
+        formState = 'signedIn';
+    } catch (err) {
+        console.log({ err });
+    }
+}
 export default function Login() {
     return (
         <>
@@ -22,20 +63,24 @@ export default function Login() {
                         </div>
                         <span className="signup-text">Sign Up</span>
                         <div className="name-wrapper">
-                            <input className="name input" placeholder="Full Name"></input>
+                            <input name="username" className="name input" placeholder="Full Name" onChange={onChange}></input>
                         </div>
                         <div className="email-wrapper">
-                            <input className="email input" placeholder="Email"></input>
+                            <input name="email" className="email input" placeholder="Email" onChange={onChange}></input>
                         </div>
                         <div className="password-wrapper">
-                            <input className="password input" placeholder="Password"></input>
+                            <input name="password" className="password input" placeholder="Password" onChange={onChange}></input>
                         </div>
                         <div className="repeat-password-wrapper">
-                            <input className="repeat-password input" placeholder="Repeat Password"></input>
+                            <input className="repeat-password input" placeholder="Repeat Password" onChange={onChange}></input>
                         </div>
                         <div className="buttons">
-                            <button className="signup button">Sign Up</button>
-                            <button className="signin button">Sign In</button>
+                            <button className="signup button" onClick={signUp}>
+                                Sign Up
+                            </button>
+                            <button className="signin button" onClick={signIn}>
+                                Sign In
+                            </button>
                         </div>
                     </form>
                 </div>
