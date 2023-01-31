@@ -1,29 +1,10 @@
 {
   "auth": {
-    "oyo6263823a": {
+    "oyoc1ad8307": {
       "customAuth": false,
-      "dependsOn": [
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "oyo6263823aCustomMessage",
-          "triggerProvider": "Cognito"
-        },
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "oyo6263823aPostConfirmation",
-          "triggerProvider": "Cognito"
-        }
-      ],
+      "dependsOn": [],
       "frontendAuthConfig": {
-        "mfaConfiguration": "OFF",
+        "mfaConfiguration": "OPTIONAL",
         "mfaTypes": [
           "SMS"
         ],
@@ -32,98 +13,19 @@
           "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
-          "BIRTHDATE",
-          "EMAIL",
-          "GENDER",
-          "NAME",
-          "PHONE_NUMBER"
+          "EMAIL"
         ],
         "socialProviders": [],
-        "usernameAttributes": [],
+        "usernameAttributes": [
+          "EMAIL",
+          "PHONE_NUMBER"
+        ],
         "verificationMechanisms": [
           "EMAIL"
         ]
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
-    }
-  },
-  "function": {
-    "oyo6263823aCustomMessage": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "oyo6263823aPostConfirmation": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_oyo6263823aCustomMessage_EMAILMESSAGE": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "oyo6263823aCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_oyo6263823aCustomMessage_EMAILSUBJECT": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "oyo6263823aCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_oyo6263823aCustomMessage_REDIRECTURL": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "oyo6263823aCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_oyo6263823aCustomMessage_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "oyo6263823aCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_oyo6263823aCustomMessage_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "oyo6263823aCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_oyo6263823aPostConfirmation_GROUP": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "oyo6263823aPostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_oyo6263823aPostConfirmation_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "oyo6263823aPostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_oyo6263823aPostConfirmation_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "oyo6263823aPostConfirmation"
-        }
-      ]
     }
   }
 }
