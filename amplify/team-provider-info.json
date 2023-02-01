@@ -1,53 +1,38 @@
 {
-  "staging": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-amplifya7316cc7ecd34-staging-20019-authRole",
-      "UnauthRoleArn": "arn:aws:iam::049338314190:role/amplify-amplifya7316cc7ecd34-staging-20019-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::049338314190:role/amplify-amplifya7316cc7ecd34-staging-20019-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-amplifya7316cc7ecd34-staging-20019-deployment",
-      "UnauthRoleName": "amplify-amplifya7316cc7ecd34-staging-20019-unauthRole",
-      "StackName": "amplify-amplifya7316cc7ecd34-staging-20019",
-      "StackId": "arn:aws:cloudformation:us-east-1:049338314190:stack/amplify-amplifya7316cc7ecd34-staging-20019/03ba5a10-a10b-11ed-9663-12b127c8f26d",
-      "AmplifyAppId": "d2pt2mndpfmw7c"
-    },
-    "categories": {
-      "auth": {
-        "testcategory": {},
-        "oyoc1ad8307": {}
-      }
-    }
-  },
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-oyo-dev-201113-authRole",
-      "UnauthRoleArn": "arn:aws:iam::049338314190:role/amplify-oyo-dev-201113-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::049338314190:role/amplify-oyo-dev-201113-authRole",
+      "AuthRoleName": "amplify-oyo-dev-230742-authRole",
+      "UnauthRoleArn": "arn:aws:iam::049338314190:role/amplify-oyo-dev-230742-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::049338314190:role/amplify-oyo-dev-230742-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-oyo-dev-201113-deployment",
-      "UnauthRoleName": "amplify-oyo-dev-201113-unauthRole",
-      "StackName": "amplify-oyo-dev-201113",
-      "StackId": "arn:aws:cloudformation:us-east-1:049338314190:stack/amplify-oyo-dev-201113/8ab460f0-a10c-11ed-92b1-0e00c578f3cf",
-      "AmplifyAppId": "d4tz63ym77j66",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-oyo-dev-201113-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "DeploymentBucketName": "amplify-oyo-dev-230742-deployment",
+      "UnauthRoleName": "amplify-oyo-dev-230742-unauthRole",
+      "StackName": "amplify-oyo-dev-230742",
+      "StackId": "arn:aws:cloudformation:us-east-1:049338314190:stack/amplify-oyo-dev-230742/5c7c45d0-a1ee-11ed-8480-0a2c266a4f63",
+      "AmplifyAppId": "d1dwgjlmz6uxs2",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-oyo-dev-230742-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "oyo6263823a": {}
+        "oyo": {},
+        "userPoolGroups": {}
       },
       "function": {
-        "oyo6263823aCustomMessage": {
-          "REDIRECTURL": "",
-          "EMAILSUBJECT": "",
+        "oyoCustomMessage": {
+          "REDIRECTURL": "localhost:3000",
+          "EMAILSUBJECT": "Account Confirmation Email",
           "EMAILMESSAGE": "",
-          "deploymentBucketName": "amplify-oyo-dev-201113-deployment",
-          "s3Key": "amplify-builds/oyo6263823aCustomMessage-76494a363142342b705a-build.zip"
+          "deploymentBucketName": "amplify-oyo-dev-230742-deployment",
+          "s3Key": "amplify-builds/oyoCustomMessage-53797070393248783268-build.zip"
         },
-        "oyo6263823aPostConfirmation": {
-          "GROUP": "",
-          "deploymentBucketName": "amplify-oyo-dev-201113-deployment",
-          "s3Key": "amplify-builds/oyo6263823aPostConfirmation-66444854387458574439-build.zip"
+        "oyoPostConfirmation": {
+          "GROUP": "users",
+          "deploymentBucketName": "amplify-oyo-dev-230742-deployment",
+          "s3Key": "amplify-builds/oyoPostConfirmation-365437776d3236644261-build.zip"
         }
+      },
+      "api": {
+        "oyo": {}
       }
     }
   }

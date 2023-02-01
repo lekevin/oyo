@@ -119,6 +119,11 @@ input:focus {
     @include flex-between;
 }
 
+.passwordError {
+    @include flex-center;
+    color: red;
+}
+
 .hidden {
     display: none;
 }
@@ -126,9 +131,4 @@ input:focus {
 .signin-text1,
 .signup-text1 {
     align-self: center;
-}
-
-.passwordError {
-    @include flex-center;
-    color: red;
 }

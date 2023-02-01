@@ -46,8 +46,9 @@ async function signIn(e: any) {
         await Auth.signIn(formInputState.username, formInputState.password);
         /* Once the user successfully signs in, update the form state to show the signed in state */
         formState = 'signedIn';
-    } catch (err) {
-        console.log({ err });
+    } catch (err: any) {
+        e.preventDefault();
+        alert(err.message);
     }
 }
 
@@ -70,6 +71,7 @@ function toggleView() {
     signUp1?.classList.toggle('hidden');
     signIn2?.classList.toggle('hidden');
     signUp2?.classList.toggle('hidden');
+    document.querySelector('.passwordError')?.classList.add('hidden');
 }
 
 export default function Login(user: any) {
@@ -95,7 +97,7 @@ export default function Login(user: any) {
                         <span className="signup-text">Sign Up</span>
                         <span className="signin-text hidden">Sign In</span>
                         <div className="name-wrapper">
-                            <input name="username" className="name input" placeholder="Username" onChange={onChange}></input>
+                            <input name="username" className="name input" placeholder="Full Name" onChange={onChange}></input>
                         </div>
                         <div className="email-wrapper">
                             <input name="email" className="email input" placeholder="Email" onChange={onChange}></input>
